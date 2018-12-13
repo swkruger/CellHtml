@@ -1,0 +1,64 @@
+<widget id="CellHtml.widget.CellHtml" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>Cell Html</name>
+    <description>Cell Html</description>
+    <icon/>
+    <properties>
+		<property key="gridEntity" type="entity" required="true">
+		    <caption>Grid Entity</caption>
+			<category>Behavior</category>
+	 		<description>The type of objects in the grid.</description>
+		</property>        
+        <property key="gridName" type="string" required="true" defaultValue="">
+            <caption>Grid name</caption>
+            <category>Behavior</category>
+            <description>Name of the data grid widget.</description>
+        </property>
+        <property key="params" type="object" isList="true">
+            <caption>Parameters</caption>
+            <category>Parameters</category>
+            <description>Parameters used in the grid.</description>
+            <properties>
+                <property key="name" type="string" required="true" defaultValue="">
+                    <caption>Parameter Name</caption>
+                    <category>Behavior</category>
+                    <description>Name of the parameter, use as ${name} in your column html.</description>
+                </property>
+                <property key="valueAttr" type="attribute" entityProperty="../gridEntity" required="false">
+                    <caption>Value Attribute</caption>
+                    <category>Behavior</category>
+                    <description>The attribute used as value, if empty then the static value will be used.</description>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+            </properties>
+        </property>
+        <property key="columns" type="object" isList="true">
+            <caption>Columns</caption>
+            <category>Behavior</category>
+            <description>Columns to style in the grid.</description>
+            <properties>
+                <property key="columnName" type="string" required="true" defaultValue="">
+                    <caption>Column name</caption>
+                    <category>Behavior</category>
+                    <description>Name of the data grid column that will get html.</description>
+                </property>
+                <property key="html" type="string" multiline="true" required="false" defaultValue="">
+                    <caption>Html to apply</caption>
+                    <category>Behavior</category>
+                    <description>(Optional) The html string to apply. Use ${name} as template text for parameters.</description>
+                </property>             
+                <property key="position" type="enumeration" defaultValue="first">
+                    <caption>Postion</caption>
+                    <category>Behavior</category>
+                    <description>Position where to place the html</description>
+                    <enumerationValues>
+                        <enumerationValue key="first">Before</enumerationValue>
+                        <enumerationValue key="last">After</enumerationValue>
+                        <enumerationValue key="only">Replace</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </properties>
+        </property>        
+    </properties>
+</widget>

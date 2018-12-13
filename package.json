@@ -1,8 +1,8 @@
 {
-  "name": "grid-cell-styler",
+  "name": "grid-cell-html",
   "private": true,
   "version": "1.0.2",
-  "description": "Grid Cell Styler",
+  "description": "Grid Cell Html",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack",
     "dev": "cross-env WEBPACK_ENV=dev gulp",
@@ -13,7 +13,7 @@
     "clean": "gulp clean"
   },
   "widget": {
-    "package": "CellStyler",
+    "package": "CellHtml",
     "filesFolder": "widget",
     "libraries": false,
     "core": false,
@@ -38,7 +38,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "del": "^3.0.0",
-    "eslint": "^4.7.1",
+    "eslint": "^4.19.1",
     "eslint-config-recommended": "^1.5.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
