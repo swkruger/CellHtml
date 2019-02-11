@@ -68,7 +68,10 @@ export default defineWidget('CellHtml', false, {
 
         if (html) {
             for (param of this.params) {
-                htmlStr = html.split("${" + param.name + "}").join(rowObj.get(param.valueAttr));
+                if (-1 !== html.indexOf("${" + param.name + "}")) {
+                    htmlStr = html.split("${" + param.name + "}").join(rowObj.get(param.valueAttr));
+                    break;
+                }
             }
             const nodeToRemove = query("." + column.columnName + "-html", nodeToApply)[ 0 ];
             if (nodeToRemove) {
